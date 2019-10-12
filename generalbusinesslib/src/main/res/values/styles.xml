@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--蒙层弹框全屏样式-->
+    <style name="MaskDialogFullScreen">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/mark_bg</item>
+    </style>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="countdown_seconds_later_retry">(%1$s)重新获取</string>
+    <string name="countdown_again_obtain">获取验证码</string>
+</resources>
