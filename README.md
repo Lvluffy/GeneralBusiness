@@ -23,3 +23,13 @@ dependencies {
 dependencies {
           implementation 'com.github.Lvluffy:GeneralBusiness:1.0.0'
 }
+
+## 核心业务
+
+1，倒计时
+
+2，轮询器
+
+3，业务转换
+
+4，蒙层
