@@ -19,8 +19,6 @@ import java.util.regex.Pattern;
  * @desc 蒙版工具
  */
 public class MaskUtils {
-    /*弹框*/
-    private Dialog mDialog;
     /*显示的位置*/
     private int TIMES = 1;
 
@@ -46,7 +44,7 @@ public class MaskUtils {
      * 显示单张蒙版提示
      */
     private void showSingleMark(final Context context, View view, final String key) {
-        mDialog = MaskDialog.getInstance().getFullSreenDialog(context, view);
+        Dialog mDialog = MaskDialog.getInstance().getFullSreenDialog(context, view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,20 +65,20 @@ public class MaskUtils {
      * @param key
      */
     private void showMultipleMark(final Context context, final List<View> views, final String key) {
-        mDialog = MaskDialog.getInstance().getFullSreenDialog(context, views.get(0));
+        Dialog mDialog = MaskDialog.getInstance().getFullSreenDialog(context, views.get(0));
         //防止蒙版显示中途退出  回来再次重叠显示的问题
         if (TIMES == 1) {
             views.get(0).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ring(context, views, key);
+                    ring(context, mDialog, views, key);
                 }
             });
         }
         mDialog.show();
     }
 
-    private void ring(Context context, List<View> views, String key) {
+    private void ring(Context context, Dialog mDialog, List<View> views, String key) {
         //蒙版显示完
         if (TIMES == views.size()) {
             saveMark(context, key);
@@ -90,7 +88,7 @@ public class MaskUtils {
             TIMES = 1;
         } else {
             mDialog.setContentView(views.get(TIMES));
-            childClick(context, views.get(TIMES), views, key);
+            childClick(context, mDialog, views.get(TIMES), views, key);
             ++TIMES;
         }
     }
@@ -103,11 +101,11 @@ public class MaskUtils {
      * @param views
      * @param key
      */
-    private void childClick(final Context context, View v, final List<View> views, final String key) {
+    private void childClick(final Context context, Dialog mDialog, View v, final List<View> views, final String key) {
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ring(context, views, key);
+                ring(context, mDialog, views, key);
             }
         });
     }

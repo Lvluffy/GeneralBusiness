@@ -33,7 +33,7 @@ public class CountdownUtil extends CountDownTimer {
      */
     public CountdownUtil(Context context, long millisInFuture, long countDownInterval) {
         super(millisInFuture, countDownInterval);
-        this.mContext = context;
+        this.mContext = context.getApplicationContext();
     }
 
     public int getStartTxtColor() {
