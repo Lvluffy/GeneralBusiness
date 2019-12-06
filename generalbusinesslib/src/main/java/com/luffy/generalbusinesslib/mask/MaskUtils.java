@@ -44,7 +44,7 @@ public class MaskUtils {
      * 显示单张蒙版提示
      */
     private void showSingleMark(final Context context, View view, final String key) {
-        Dialog mDialog = MaskDialog.getInstance().getFullSreenDialog(context, view);
+        final Dialog mDialog = MaskDialog.getInstance().getFullSreenDialog(context, view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +65,7 @@ public class MaskUtils {
      * @param key
      */
     private void showMultipleMark(final Context context, final List<View> views, final String key) {
-        Dialog mDialog = MaskDialog.getInstance().getFullSreenDialog(context, views.get(0));
+        final Dialog mDialog = MaskDialog.getInstance().getFullSreenDialog(context, views.get(0));
         //防止蒙版显示中途退出  回来再次重叠显示的问题
         if (TIMES == 1) {
             views.get(0).setOnClickListener(new View.OnClickListener() {
@@ -101,7 +101,7 @@ public class MaskUtils {
      * @param views
      * @param key
      */
-    private void childClick(final Context context, Dialog mDialog, View v, final List<View> views, final String key) {
+    private void childClick(final Context context, final Dialog mDialog, View v, final List<View> views, final String key) {
         v.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
