@@ -39,9 +39,9 @@ public class ConversionObjectActivity extends AppCompatActivity {
             TestConversionObject mTestConversionObject = new TestConversionObject();
             int type = new Random().nextInt(10);
             if (i == 5 - 1) {
-                mStringBuilder.append(type + "：" + mTestConversionObject.getConversionObject(type));
+                mStringBuilder.append(type).append("：").append(mTestConversionObject.getConversionObject(type));
             } else {
-                mStringBuilder.append(type + "：" + mTestConversionObject.getConversionObject(type) + "\n");
+                mStringBuilder.append(type).append("：").append(mTestConversionObject.getConversionObject(type)).append("\n");
             }
             txtCentent.setText(mStringBuilder);
         }

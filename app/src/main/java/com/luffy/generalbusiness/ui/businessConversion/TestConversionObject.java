@@ -14,7 +14,7 @@ import com.luffy.generalbusinesslib.businessConversion.BaseConversionObject;
 public class TestConversionObject extends BaseConversionObject<Integer, String> {
     @Override
     public String getConversionObject(Integer businessType) {
-        String result = null;
+        String result;
         switch (businessType) {
             case 1:
                 result = "篮球";
