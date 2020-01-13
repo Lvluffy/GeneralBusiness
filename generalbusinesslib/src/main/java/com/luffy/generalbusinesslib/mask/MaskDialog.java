@@ -21,15 +21,8 @@ public class MaskDialog {
         return MaskDialogHelper.mMaskDialog;
     }
 
-    /**
-     * 静态内部类实现单例
-     */
     private static class MaskDialogHelper {
-        private static MaskDialog mMaskDialog;
-
-        static {
-            mMaskDialog = new MaskDialog();
-        }
+        private static MaskDialog mMaskDialog = new MaskDialog();
     }
 
     //自定义全屏显示的dialog

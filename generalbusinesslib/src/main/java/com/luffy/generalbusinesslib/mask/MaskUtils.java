@@ -33,11 +33,7 @@ public class MaskUtils {
      * 静态内部类实现单例
      */
     private static class MaskUtilsHelper {
-        private static MaskUtils mMaskUtils;
-
-        static {
-            mMaskUtils = new MaskUtils();
-        }
+        private static MaskUtils mMaskUtils = new MaskUtils();
     }
 
     /**

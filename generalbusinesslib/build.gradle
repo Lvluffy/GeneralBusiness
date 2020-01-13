@@ -3,14 +3,14 @@ apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.Lvluffy'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
     /**默认-选项配置*/
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode rootProject.ext.versionCode
-        versionName rootProject.ext.versionName
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
     }
     /**构建类型-配置*/
     buildTypes {
@@ -34,23 +34,17 @@ android {
     }
     /**自定义aar的名字*/
     android.libraryVariants.all { variant ->
-        variant.outputs.each { output ->
-            def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.endsWith('.aar')) {
-                def fileName = outputFile.name.replace(".aar", "-") + rootProject.ext.versionCode + ".aar"
-                output.outputFile = new File(outputFile.parent, fileName)
-            }
+        variant.outputs.all {
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.ext.android.versionCode + ".aar"
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    provided "com.android.support.constraint:constraint-layout:$rootProject.supportConstraintLayout"
-    provided "com.android.support:appcompat-v7:$rootProject.supportVersion"
-    provided "com.android.support:support-v4:$rootProject.supportVersion"
+    compileOnly rootProject.ext.supportLibs
     /**lib库*/
     /*通用工具*/
-    provided 'com.github.Lvluffy:GeneralUtils:1.0.0'
+    compileOnly 'com.github.Lvluffy:GeneralUtils:1.1.1'
 }

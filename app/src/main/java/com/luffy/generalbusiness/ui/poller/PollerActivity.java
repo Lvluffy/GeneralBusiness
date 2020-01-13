@@ -42,7 +42,7 @@ public class PollerActivity extends AppCompatActivity {
         mPollUtils.poll(new IPollerCallBack() {
             @Override
             public void onVerifyRefresh() {
-                if (new Random().nextInt(20) == 5) {
+                if (new Random().nextInt(10) == 5) {
                     mPollUtils.setNeedPoll(false);
                 } else {
                     mPollUtils.setNeedPoll(true);

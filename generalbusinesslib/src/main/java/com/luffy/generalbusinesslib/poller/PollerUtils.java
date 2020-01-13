@@ -17,11 +17,7 @@ public class PollerUtils {
     }
 
     private static class PollerUtilsHelper {
-        private static PollerUtils mPollerUtils;
-
-        static {
-            mPollerUtils = new PollerUtils();
-        }
+        private static PollerUtils mPollerUtils = new PollerUtils();
     }
 
     /**
