@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--蒙层半透明-->
+    <color name="mask_translucent">@color/color_bg</color>
+    <color name="color_bg">#99000000</color>
+</resources>

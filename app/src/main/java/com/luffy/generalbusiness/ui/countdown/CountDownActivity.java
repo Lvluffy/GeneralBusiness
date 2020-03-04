@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.luffy.countdownlib.CountdownUtil;
 import com.luffy.generalbusiness.R;
-import com.luffy.generalbusinesslib.countdown.CountdownUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/y45"
-    android:layout_margin="@dimen/y15"
+    android:layout_height="45dp"
+    android:layout_margin="15dp"
     android:background="@drawable/login_editext_selector"
-    android:paddingLeft="@dimen/x15"
-    android:paddingRight="@dimen/x15">
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp">
 
     <TextView
         android:id="@+id/txt_verification_code_hint"
@@ -28,8 +28,8 @@
         android:hint="请输入验证码"
         android:inputType="number"
         android:maxLength="6"
-        android:paddingLeft="@dimen/x15"
-        android:paddingStart="@dimen/x15"
+        android:paddingLeft="15dp"
+        android:paddingStart="15dp"
         android:textColor="#333333"
         android:textColorHint="#CCCCCC"
         android:textCursorDrawable="@drawable/base_cursor_color"

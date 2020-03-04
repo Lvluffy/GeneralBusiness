@@ -5,8 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.luffy.generalbusiness.R;
-import com.luffy.generalbusinesslib.poller.IPollerCallBack;
-import com.luffy.generalbusinesslib.poller.PollerUtils;
+import com.luffy.pollerlib.IPollerCallBack;
+import com.luffy.pollerlib.PollerUtils;
 
 import java.util.Random;
 

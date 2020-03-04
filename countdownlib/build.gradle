@@ -1,11 +1,12 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.Lvluffy'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
     /**默认-选项配置*/
     defaultConfig {
-        applicationId rootProject.ext.android.applicationId
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
@@ -21,7 +22,7 @@ android {
         }
         release {
             //混淆
-            minifyEnabled true
+            minifyEnabled false
             //混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -31,30 +32,16 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    /**依赖选项*/
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    /**自定义aar的名字*/
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.ext.android.versionCode + ".aar"
+        }
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    implementation rootProject.ext.supportLibs
-    /**lib库*/
-    /*butterknife*/
-    implementation 'com.jakewharton:butterknife:9.0.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-    /*通用工具*/
-    implementation 'com.github.Lvluffy:GeneralUtils:1.1.1'
-    /**project*/
-    /*轮训器*/
-    implementation project(path: ':pollerlib')
-    /*蒙层*/
-    implementation project(path: ':masklib')
-    /*倒计时*/
-    implementation project(path: ':countdownlib')
-    /*业务转换*/
-    implementation project(path: ':businessconversionlib')
+    compileOnly rootProject.ext.supportLibs
 }

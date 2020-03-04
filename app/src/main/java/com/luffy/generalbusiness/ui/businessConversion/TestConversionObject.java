@@ -2,7 +2,7 @@ package com.luffy.generalbusiness.ui.businessConversion;
 
 import android.content.Context;
 
-import com.luffy.generalbusinesslib.businessConversion.BaseConversionObject;
+import com.luffy.businessconversionlib.BaseConversionObject;
 
 /**
  * Created by lvlufei on 2019/10/12
