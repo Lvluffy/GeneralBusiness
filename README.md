@@ -14,14 +14,19 @@ allprojects {
 
 二、Module下的build.gradle文件下添加
 
+1.0.3以前
+
 dependencies {
-          compile 'com.github.Lvluffy:GeneralBusiness:1.0.0'
+          implementation 'com.github.Lvluffy:GeneralBusiness:1.0.3'
 }
 
-或者
+1.0.4以后
 
 dependencies {
-          implementation 'com.github.Lvluffy:GeneralBusiness:1.0.0'
+	     implementation 'com.github.Lvluffy.GeneralBusiness:businessconversionlib:1.0.4'
+         implementation 'com.github.Lvluffy.GeneralBusiness:countdownlib:1.0.4'
+         implementation 'com.github.Lvluffy.GeneralBusiness:masklib:1.0.4'
+         implementation 'com.github.Lvluffy.GeneralBusiness:pollerlib:1.0.4'
 }
 
 ## 核心业务
