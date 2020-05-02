@@ -19,6 +19,4 @@ ext {
             "support-v4"       : "com.android.support:support-v4:${dependVersion.supportVersion}",
             "appcompat-v7"     : "com.android.support:appcompat-v7:${dependVersion.supportVersion}"
     ]
-
-    supportLibs = supportDepends.values()
 }
