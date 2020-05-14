@@ -16,12 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- 倒计时界面 -->
         <activity android:name=".ui.countdown.CountDownActivity" />
-        <!-- 业务转换界面 -->
         <activity android:name=".ui.businessConversion.ConversionObjectActivity" />
-        <!--轮询器界面-->
         <activity android:name=".ui.poller.PollerActivity" />
+        <activity android:name=".ui.options.OptionsActivity" />
     </application>
 
 </manifest>

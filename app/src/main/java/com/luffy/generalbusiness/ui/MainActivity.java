@@ -9,6 +9,7 @@ import android.view.View;
 import com.luffy.generalbusiness.R;
 import com.luffy.generalbusiness.ui.businessConversion.ConversionObjectActivity;
 import com.luffy.generalbusiness.ui.countdown.CountDownActivity;
+import com.luffy.generalbusiness.ui.options.OptionsActivity;
 import com.luffy.generalbusiness.ui.poller.PollerActivity;
 import com.luffy.generalutilslib.utils.DoubleClickExitUtils;
 
@@ -32,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick({R.id.item_1,
             R.id.item_2,
-            R.id.item_3
+            R.id.item_3,
+            R.id.item_4
     })
     public void onViewClicked(View view) {
         int i = view.getId();
@@ -42,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (i == R.id.item_2) {
             Intent intent = new Intent(this, ConversionObjectActivity.class);
             startActivity(intent);
-        }else if (i == R.id.item_3) {
+        } else if (i == R.id.item_3) {
             Intent intent = new Intent(this, PollerActivity.class);
+            startActivity(intent);
+        } else if (i == R.id.item_4) {
+            Intent intent = new Intent(this, OptionsActivity.class);
             startActivity(intent);
         }
     }

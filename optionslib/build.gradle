@@ -1,11 +1,12 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.Lvluffy'
 
 android {
     compileSdkVersion rootProject.android.compileSdkVersion
     buildToolsVersion rootProject.android.buildToolsVersion
     /**默认-选项配置*/
     defaultConfig {
-        applicationId rootProject.android.applicationId
         minSdkVersion rootProject.android.minSdkVersion
         targetSdkVersion rootProject.android.targetSdkVersion
         versionCode rootProject.android.versionCode
@@ -21,7 +22,7 @@ android {
         }
         release {
             //混淆
-            minifyEnabled true
+            minifyEnabled false
             //混淆文件
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -31,28 +32,16 @@ android {
         checkReleaseBuilds false
         abortOnError false
     }
-    /**依赖选项*/
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+    /**自定义aar的名字*/
+    android.libraryVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = outputFileName.replace(".aar", "-") + rootProject.android.versionCode + ".aar"
+        }
     }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    implementation rootProject.supportDepends.values()
-    /**lib库*/
-    /*butterknife*/
-    implementation 'com.jakewharton:butterknife:9.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0'
-    /*通用工具*/
-    implementation 'com.github.Lvluffy:GeneralUtils:1.1.1'
-    /**project*/
-    implementation project(path: ':pollerlib')
-    implementation project(path: ':masklib')
-    implementation project(path: ':countdownlib')
-    implementation project(path: ':businessconversionlib')
-    implementation project(path: ':optionslib')
+    compileOnly rootProject.supportDepends.values()
 }

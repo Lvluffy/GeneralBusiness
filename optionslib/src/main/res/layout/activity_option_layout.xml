@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!--头部标题-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="46dp">
+
+            <!--返回-->
+            <LinearLayout
+                android:id="@+id/layout_back"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/general_arrow_back" />
+
+            </LinearLayout>
+
+            <!--标题-->
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="类型"
+                android:textColor="#3D464D"
+                android:textSize="17sp" />
+
+            <!--保存-->
+            <TextView
+                android:id="@+id/tv_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:text="保存"
+                android:textColor="@drawable/save_btn_textview_selector"
+                android:textSize="14sp"
+                android:visibility="visible"/>
+
+        </RelativeLayout>
+
+        <!--分割线-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#E5E5E5" />
+
+    </LinearLayout>
+
+    <!--列表数据-->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
