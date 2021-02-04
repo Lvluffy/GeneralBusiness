@@ -2,8 +2,8 @@ package com.luffy.countdownlib;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.os.CountDownTimer;
-import android.support.v4.content.ContextCompat;
 import android.widget.TextView;
 
 /**
@@ -108,7 +108,8 @@ public class CountdownUtil extends CountDownTimer {
     public void onTick(long millisUntilFinished) {
         getmTextView().setEnabled(false);
         getmTextView().setText(String.format(mContext.getResources().getString(getFormatTxt()), millisUntilFinished / 1000));
-        getmTextView().setTextColor(ContextCompat.getColor(mContext, getStartTxtColor()));
+        getmTextView().setTextColor(Build.VERSION.SDK_INT >= 23 ? mContext.getColor(getStartTxtColor()) :
+                mContext.getResources().getColor(getStartTxtColor()));
         getmTextView().setBackgroundResource(getStartBgColor());
     }
 
@@ -119,7 +120,9 @@ public class CountdownUtil extends CountDownTimer {
     public void onFinish() {
         getmTextView().setEnabled(true);
         getmTextView().setText(getDefaultTxt());
-        getmTextView().setTextColor(ContextCompat.getColor(mContext, getEndTxtColor()));
+
+        getmTextView().setTextColor(Build.VERSION.SDK_INT >= 23 ? mContext.getColor(getEndTxtColor()) :
+                mContext.getResources().getColor(getEndTxtColor()));
         getmTextView().setBackgroundResource(getEndBgColor());
         if (onFinishListener != null)
             onFinishListener.onFinish();

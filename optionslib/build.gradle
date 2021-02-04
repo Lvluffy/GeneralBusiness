@@ -43,5 +43,5 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     /**support*/
-    compileOnly rootProject.supportDepends.values()
+    compileOnly rootProject.supportDepends.recyclerview
 }

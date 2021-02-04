@@ -42,8 +42,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    /**support*/
-    compileOnly rootProject.supportDepends.values()
     /**lib库*/
     /*通用工具*/
     compileOnly 'com.github.Lvluffy:GeneralUtils:1.1.1'
