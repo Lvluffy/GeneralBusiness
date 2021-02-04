@@ -5,8 +5,8 @@ ext {
             minSdkVersion    : 15,
             targetSdkVersion : 28,
             applicationId    : "com.luffy.generalbusiness",
-            versionCode      : 106,
-            versionName      : "1.0.6"
+            versionCode      : 107,
+            versionName      : "1.0.7"
     ]
 
     dependVersion = [
@@ -15,9 +15,7 @@ ext {
     ]
 
     supportDepends = [
-            "constraint-layout": "com.android.support.constraint:constraint-layout:${dependVersion.supportConstraintLayout}",
-            "support_v4"       : "com.android.support:support-v4:${dependVersion.supportVersion}",
-            "appcompat_v7"     : "com.android.support:appcompat-v7:${dependVersion.supportVersion}",
-            "recyclerview"     : "com.android.support:recyclerview-v7:${dependVersion.supportVersion}"
+            "appcompat_v7": "com.android.support:appcompat-v7:${dependVersion.supportVersion}",
+            "recyclerview": "com.android.support:recyclerview-v7:${dependVersion.supportVersion}"
     ]
 }
